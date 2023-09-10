@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 let path = require('path');
 
-const port = 5000;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 
@@ -15,6 +15,6 @@ app.post('/post', (req, res) => {
   res.json({ 'titulo': 'Uma noticia em post' });
 });
 
-app.listen(port, () => {
-  console.log(`server on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`server on port ${PORT}`);
 });
